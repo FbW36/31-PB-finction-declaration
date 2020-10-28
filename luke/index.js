@@ -16,33 +16,31 @@ function reverseNumber(number) {
 console.log(reverseNumber(647));
 
 // Create a function to sort a string into alphabetical order.
+//!way one gets rid of speical characters
 
-//! this idea was a lot of fun! if you can solve it using that idea id love to know how
+function toAlphabeticalOrder(string) {
+  if (typeof "" === typeof string) {
+    strArr = [];
+    for (let x = 0; x < string.length; x++) {
+      if (string[x].charCodeAt() >= 65 && string[x].charCodeAt() <= 90) {
+        strArr.push(string[x]);
+      } else if (
+        string[x].charCodeAt() >= 97 &&
+        string[x].charCodeAt() <= 122
+      ) {
+        strArr.push(string[x]);
+      }
+    }
+    strArr.sort();
+    output = strArr.join("");
+    return output;
+  } else {
+    return `${string} is not a string`;
+  }
+}
+console.log(`to order ==> `, toAlphabeticalOrder("azAZello*&^%"));
 
-// function toAlphabeticalOrder(string) {
-//   if (typeof "" === typeof string) {
-//     string = string.toLowerCase();
-
-//     for (let x = 0; x <= string.length - 1; x++) {
-//       const stringArr = [];
-//       const forgetThis = [];
-//       toCheck = string[x];
-//       console.log(toCheck);
-//       if (toCheck.charCodeAt() >= 97 && toCheck.charCodeAt() <= 122) {
-//         stringArr.push(toCheck);
-//         console.log(stringArr);
-//       } else {
-//         forgetThis.push(toCheck);
-//       }
-//     }
-//   }
-//}
-//   else {
-//     return `${string} is not a string`;
-// }
-// console.log(toAlphabeticalOrder("Hello"));
-
-//! end cool idea
+//! way two
 
 function orderLetter(word) {
   wordArr = word.split("");
@@ -51,7 +49,7 @@ function orderLetter(word) {
   return output;
 }
 
-console.log(orderLetter("hekki"));
+console.log(orderLetter("he*&^%kki"));
 
 // Create a function which accepts two arguments, an array of numbers and a number.The function should return the elements of the array which are greater than the second argument.
 //! dont really understand this second argument bit
