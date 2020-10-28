@@ -61,9 +61,9 @@ function findLongestWord(string) {
 /* Slow solution 
 function findLongestWord(string) {
   let array = string.split(" ");
-  let result = array[0].length;
+  let result = array[0];
   for (let i = 1; i <= array.length - 1; i++) {
-    if (array[i].length > result) {
+    if (array[i].length > result.length) {
       result = array[i];
     }
   }
@@ -110,4 +110,4 @@ function countLetters(string) {
   }
   return letterCount;
 }
-console.log(countLetters("tree"));
+// console.log(countLetters("tree"));
