@@ -117,16 +117,10 @@ console.log(longestWord("we will rock you"));
 // Create a function that takes a string in its parameters and counts the number of vowels in the string.
 function howManyVowels(string) {
   if (typeof "" === typeof string) {
-    const vowels = ["a", "e", "i", "o", "u"];
+    const vowels = "aAeEiIoOuU";
     let numOfVowels = 0;
     for (let i = 0; i < string.length; i++) {
-      if (
-        string[i] == vowels[0] ||
-        string[i] == vowels[1] ||
-        string[i] == vowels[2] ||
-        string[i] == vowels[3] ||
-        string[i] == vowels[4]
-      ) {
+      if (vowels.includes(string[i])) {
         numOfVowels++;
       }
     }
@@ -136,7 +130,7 @@ function howManyVowels(string) {
   }
 }
 
-console.log(howManyVowels("this is a string"));
+console.log(`howManyVowels ==> `, howManyVowels("this is a string"));
 
 // Create a function that detects the data type of the argument passed.
 function whatDataType(dataType) {
