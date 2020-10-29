@@ -30,15 +30,22 @@ console.log("input 'webdev', output => ", alphabetOrder('webdev'))
     //findGreatest([3, 4, 5], 4) -> expected output: 5
     //findGreatest([10, 20, 30], 12) -> expected output: 20, 30
     //findGreatest([0, 10, 3], 4) -> expected output: 10
-    let num1 = 4
-    const num2 = [3,4,5];
-    function greater() {
-        let sequence = num2.push(num1)
-        let findGreatest = Math.max(...num2)
-        return findGreatest
+
+    function findGreatest(arrNums, num) {
+        let arr = []
+        for(let i=0; i < arrNums.length; i++){
+            if(arrNums[i] > num){
+                arr.push(arrNums[i])
+            }
+        }
+        return arr.join(",");
+        //nums > num ? console.log("1st",nums) :
+        //num > nums ? console.log("2nd", num) : console.log("same")
       }
-     //Don't know why is not working :s 
-      console.log(greater) 
+      console.log(findGreatest([3, 4, 5], 4))
+      console.log(findGreatest([10, 20, 30], 12))
+      console.log(findGreatest([0, 10, 3], 4))
+
 
 //4. Dog Years
 
@@ -74,14 +81,20 @@ supply(40,3)
 
 //longestWord("this is a web development course") -> expected output: "development"
 
-// const longest = function findLongestWord(str) {
-//      let longestWord = 0;
-//      for( let i = 0; i < str.length; i++){
-//          let sortedWords = str.lengt
-//          }
-//          return longestWord;
-//      }
-//    console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+function findLongestWord(str) {
+      let longestWord = "";
+      let words = str.split(" ")
+     for( let i = 0; i < words.length; i++){
+         let individualWords = words[i]
+         //console.log(individualWords)
+         if(individualWords.length > longestWord.length){
+             longestWord = individualWords;
+             //console.log(longestWord)
+         }
+          }
+          return `the longest word in this string is ${longestWord} with ${longestWord.length} letters`;
+     }
+    console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
 
  
   //7. AEIOU: Vowels
