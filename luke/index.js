@@ -54,22 +54,24 @@ console.log(orderLetter("he*&^%kki"));
 // Create a function which accepts two arguments, an array of numbers and a number.The function should return the elements of the array which are greater than the second argument.
 //! dont really understand this second argument bit
 function findGreatest(arr1, num1) {
-  let arr1Greatest = 0;
-  for (let i = 0; i < 3; i++) {
-    if (arr1[i] > arr1Greatest) {
-      arr1Greatest = arr1[i];
+  const arr1Greater = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] > num1) {
+      arr1Greater.push(arr1[i]);
     }
   }
 
-  if (arr1Greatest > num1) {
-    return arr1Greatest;
+  console.log(arr1Greater);
+  if (arr1Greater.length > 0) {
+    output = arr1Greater.join(", ");
+    return output;
   } else {
     return num1;
   }
 }
 
 console.log(findGreatest([8, 9, 3], 4));
-console.log(findGreatest([10, 20, 30], 12));
+console.log(`this one ==> `, findGreatest([10, 20, 30], 12));
 console.log(findGreatest([0, 10, 3], 4));
 
 // Create a function which calculates how old a dog is in doggie years.The function should accept one argument that is the puppy's age. Calculate the dog's age in dog years based on the calculaton of 1 human year = 7 dog years.
