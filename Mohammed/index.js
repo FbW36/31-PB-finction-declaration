@@ -11,7 +11,7 @@ let reverseNum = number1 =>
 {
     let reverse = 0;
     
-    for (let i=0; i<3; i++ )
+    for (let i=0; i<number.length; i++ )
     {
         let reminder = number1 % 10;
         reverse = (reverse * 10) + reminder;
