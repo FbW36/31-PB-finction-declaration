@@ -9,7 +9,7 @@ function numberReverse() {
   let joinArray = parseInt(array.join(""));
   return joinArray;
 }
-console.log(numberReverse());
+console.log("1.", numberReverse());
 
 // 2. Alphabetical Order
 //Create a function to sort a string into alphabetical order.Examples: <<<<<< < HEAD
@@ -26,7 +26,7 @@ function getAlphabeticalOrder() {
   return joinString;
 }
 
-console.log(getAlphabeticalOrder());
+console.log("2.", getAlphabeticalOrder());
 
 //? 3. The Greater Numbers
 //?Create a function which accepts two arguments, an array of numbers and a number.The function should return the elements of the array which are greater than the second argument.Examples:*/
@@ -34,19 +34,18 @@ console.log(getAlphabeticalOrder());
 //findGreatest([3, 4, 5], 4) -> expected output: 5
 //findGreatest([10, 20, 30], 12) -> expected output: 20, 30
 //findGreatest([0, 10, 3], 4) -> expected output: 10
-
 let box = [];
-
-function getGreatestNumber(numb2, startNum) {
-  for (let i = 0; i > 3; i++) {
-    if (numb2[i] > startNum) {
-      box.push(numb2[i]);
+function getGreatestNumber(arrNumb, number) {
+  for (let i = 0; i < arrNumb.length; i++) {
+    if (arrNumb[i] > number) {
+      box.push(arrNumb[i]);
     }
   }
-  return box;
+  return box.join(", ");
 }
 
-console.log(getGreatestNumber([10, 12, 27], 12));
+console.log("3", getGreatestNumber([10, 12, 27], 12));
+console.log("3", getGreatestNumber([3, 4, 5], 4));
 
 //? 4. Dog Years
 //Create a function which calculates how old a dog is in doggie years.The function should accept one argument that is the puppy's age. Calculate the dog's age in dog years based on the calculaton of 1 human year = 7 dog years.
@@ -60,7 +59,7 @@ function calcDogYears(age) {
   return `you Doggy is ${humanYears} old in human.`;
 }
 
-console.log(calcDogYears(8));
+console.log("4.", calcDogYears(8));
 
 //? 5. A Lifetime Supply...
 // Create a function to calculate how much you'll need for a lifetime supply of your favourite snack. The function should accept two arguments: age and amount per day. The function should calculate the amount that will be consumed for the rest of your life given a constant max age.
@@ -77,7 +76,7 @@ function calcSupply(age, amount) {
   return Math.round(supply);
 }
 
-console.log(calcSupply(30, 0.9));
+console.log("5.", calcSupply(30, 0.9));
 
 // Bonus - A lifetime supply Accept floating point values for amount per day and round the result.
 
@@ -93,11 +92,17 @@ function getLongestWord(string) {
   let longestString = "";
 
   for (let i = 0; i < stringArray.length; i++) {
-    if (stringArray[i].length > longestString.length) {
-      longestString = stringArray[i];
+    let individualWords = stringArray[i];
+    if (individualWords.length > longestString.length) {
+      longestString = individualWords;
+      //console.log("longestWord??:", longestString);
     }
+
+    //  if (stringArray[i].length > longestString.length) {
+    //   longestString = stringArray[i];
+    //}
   }
-  return longestString;
+  return `6. the longest Word in the string is ${longestString}`;
 }
 
 console.log(getLongestWord("We will rocky you"));
@@ -121,7 +126,7 @@ function getVowels(song) {
   }
   return counts;
 }
-console.log(getVowels("I ve been looking for freedom"));
+console.log("7.", getVowels("I ve been looking for freedom"));
 
 //? 8. Data Types
 //Create a function that detects the data type of the argument passed.
@@ -135,7 +140,7 @@ function getDataType(input) {
   return `Type of argument is ${dataType}`;
 }
 
-console.log(getDataType("vier"));
+console.log("8", getDataType("vier"));
 
 //9. Count Occurrences
 //Create a function that accepts two arguments: a string and a letter.The function should count the number of occurrences of that letter in the string.
@@ -152,7 +157,7 @@ function getOccurences(song2, letter) {
   return letterInSong;
 }
 
-console.log(getOccurences("rack city bitch", "b"));
+console.log("9.", getOccurences("rack city bitch", "b"));
 
 //10. 10. Counting Letters
 // Create a function that counts the number of occurrences of each letter in a string.
@@ -171,4 +176,4 @@ function getAmountLetters(word) {
     }
   }
 }
-console.log(getAmountLetters("marie"));
+console.log("10", getAmountLetters("marie"));
